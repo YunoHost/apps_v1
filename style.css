@@ -1,0 +1,285 @@
+ /**
+  *  Yunohost - Self-hosting for dummies
+  *  Copyright (C) 2012  Kload <kload@kload.fr>
+  *
+  *  This program is free software: you can redistribute it and/or modify
+  *  it under the terms of the GNU Affero General Public License as
+  *  published by the Free Software Foundation, either version 3 of the
+  *  License, or (at your option) any later version.
+  *
+  *  This program is distributed in the hope that it will be useful,
+  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  *  GNU Affero General Public License for more details.
+  *
+  *  You should have received a copy of the GNU Affero General Public License
+  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  */
+
+html, body { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.9);
+  font-family:"Roboto", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+iframe {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; width: 100%; height: 100%;
+    border: none; padding-top:32px;
+    box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+.navbar-fixed-top {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1030;
+}
+.navbar-inner {
+    background-color: #2C2C2C;
+    background-image: -moz-linear-gradient(center top , #333333, #222222);
+    background-repeat: repeat-x;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.55), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+    border-bottom: 1px solid #666;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 940px;
+}
+.container:before, .container:after {
+    content: "";
+    display: table;
+}
+.container:after {
+    clear: both;
+}
+.brand {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    margin-left: -20px;
+    padding: 4px 20px 0;
+}
+.nav-collapse {
+  width: 640px;
+  overflow-x: hidden;
+  float: right;
+}
+.before, .after {
+  float: right;
+  color: #333;
+  line-height: 18px;
+  padding: 6px 6px 8px;
+  text-decoration: none;
+  background: #CCC;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: none;
+}
+.before {
+}
+.nav.pull-right {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.nav.pull-right, .deco, .username{
+    float: right;
+}
+
+.username {
+    color: #FFF;
+    line-height: 19px;
+    padding: 7px 10px 6px 25px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+}
+.deco {
+  padding: 7px 0 3px 4px;
+}
+.nav {
+    display: block;
+    left: 0;
+    margin: 0 10px 0 0;
+    position: relative;
+    width: 640px;
+    height: 32px;
+}
+.nav > li {
+    display: block;
+    float: left;
+    line-height: 19px;
+}
+.nav > li > a {
+    color: #999;
+    float: none;
+    line-height: 18px;
+    padding: 8px 15px 6px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+}
+.nav > li > a.active {
+  border-bottom: 3px solid #FFF;
+  padding: 8px 15px 3px;
+  color: #CCC;
+}
+.nav > li > a:hover {
+    background: black;
+}
+a.brand > img {
+  height: 25px;
+}
+
+body div#jappix_mini {
+  right: 80px;
+}
+
+body div#jappix_mini a.jm_pane {
+  background-color: #2C2C2C;
+  background-image: linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -o-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -moz-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -webkit-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -ms-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.7, rgb(34,34,34)),
+    color-stop(0.85, rgb(51,51,51))
+  );
+  background-repeat: repeat-x;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.55), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  border-color: #666;
+  margin-left: 0px;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  display: block;
+  font-weight: bold;
+  height: 13px;
+  outline-style: none;
+  padding: 6px;
+}
+
+body div#jappix_mini div.jm_chat-content {
+  right: 0;
+}
+
+body div#jappix_mini a.jm_pane {
+  padding: 7px 10px 6px;
+}
+
+body div#jappix_mini a.jm_pane span {
+  color: #CCC;
+}
+
+body div#jappix_mini a.jm_pane:hover > span,
+body div#jappix_mini a.jm_pane.jm_clicked span {
+  color: #333;
+}
+
+body div#jappix_mini a.jm_pane.jm_clicked {
+  box-shadow: none;
+  border-bottom: 1px solid white;
+}
+
+body div#jappix_mini div.jm_actions {
+  background-color: #2C2C2C;
+}
+
+body div#jappix_mini div.jm_actions span.jm_nick {
+  color: #CCC;
+}
+
+.mail_indicator {
+  bottom: 0;
+  margin-left: 130px;
+  position: fixed;
+  right: 25px;
+  z-index: 999;
+  font-size: 12px;
+}
+
+.mail_container {
+  float: left;
+  position: relative;
+}
+
+a.mail_image {
+  padding: 7px 10px 6px;
+  background-color: #2C2C2C;
+  background-image: linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -o-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -moz-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -webkit-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+  background-image: -ms-linear-gradient(bottom, rgb(34,34,34) 70%, rgb(51,51,51) 85%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.7, rgb(34,34,34)),
+    color-stop(0.85, rgb(51,51,51))
+  );
+  background-repeat: repeat-x;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.55), 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  border-color: #666;
+  margin-left: 0px;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  display: block;
+  font-weight: bold;
+  height: 13px;
+  font-size: 11px;
+  outline-style: none;
+  padding: 7px 6px 6px;
+  color: #CCC;
+}
+
+a.mail_image:hover {
+  background: none white;
+  color: #333;
+  text-shadow: none;
+  cursor: pointer;
+}
+
+span.mail_counter {
+  background: transparent url('mail.png') top left no-repeat;
+  padding-left: 25px;
+}
+
+@media (max-width: 940px) {
+  .container {
+    width: 100%;
+  }
+  .nav-collapse, .nav {
+    width: 500px;
+  }
+}
+@media (max-width: 780px) {
+  .nav-collapse, .nav {
+    width: 360px;
+  }
+}
+@media (max-width: 640px) {
+  .nav-collapse, .nav {
+    width: 260px;
+  }
+}
+@media (max-width: 520px) {
+  .nav-collapse, .nav {
+    width: 160px;
+  }
+}
+
+body #jappix_mini, body #jappix_popup {
+  font-family:"Roboto", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
