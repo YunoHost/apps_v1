@@ -96,7 +96,7 @@ $mail = imap_mailboxmsginfo($mailbox);
    jQuery(document).ready(function() {
       MINI_ANIMATE = false;
       HOST_MAIN = "<?php echo $domain ?>";
-      HOST_BOSH_MINI = 'http://<?php echo $domain ?>:5280/http-bind/';
+      HOST_BOSH_MINI = 'http://apps.<?php echo $domain ?>:5280/http-bind/';
       launchMini(false, false, <?php echo '"'.$domain.'", '.'"'.$user.'", "'.$password.'"' ?>);
    });
 </script>
