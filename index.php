@@ -20,7 +20,8 @@
 
  $user = $_SERVER["PHP_AUTH_USER"];
  $password = $_SERVER["PHP_AUTH_PW"];
- $domain = substr($_SERVER["HTTP_EMAIL"], strpos($_SERVER["HTTP_EMAIL"], '@') + 1);
+ // $domain = substr($_SERVER["HTTP_EMAIL"], strpos($_SERVER["HTTP_EMAIL"], '@') + 1);
+ $domain = exec('cat /usr/share/yunohost/yunohost-config/others/current_host');
 
 function scanAppDirectory($directory){
 
@@ -60,7 +61,7 @@ $mail = imap_mailboxmsginfo($mailbox);
           <a class="brand" href="/"><img src="logo.png"></a>
           <div class="deco"><a href="http://auth.<?php echo $domain ?>/index.pl?logout=1" title="Log out"><img src="shutdown.png"></a></div>
 
-          <div class="username"><strong><?php echo $user ?></strong></div>
+          <div class="username"><strong><a href="https://auth.<?php echo $domain ?>"><?php echo $user ?></a></strong></div>
           <a href="#" class="after">&rsaquo;</a>
           <div class="nav-collapse">
             <ul class="nav pull-right">
