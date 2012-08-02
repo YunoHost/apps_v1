@@ -1,2 +1,1 @@
-Apps
-====
+http://yunohost.org

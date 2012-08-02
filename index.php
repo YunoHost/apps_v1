@@ -38,8 +38,10 @@ function scanAppDirectory($directory){
 
 $apps = scanAppDirectory('.');
 
+if ($user != "admin" ){
 $mailbox = imap_open('{127.0.0.1:143/novalidate-cert}INBOX', $user, $password);
 $mail = imap_mailboxmsginfo($mailbox);
+}
 
  ?>
 <!doctype html>
@@ -78,7 +80,7 @@ $mail = imap_mailboxmsginfo($mailbox);
         </div>
       </div>
     </div>
-
+    <?php if ($user != "admin" ){ ?>
     <div class="mail_indicator">
       <div class="mail_container">
         <a class="mail_image" title="New mails">
@@ -86,21 +88,26 @@ $mail = imap_mailboxmsginfo($mailbox);
         </a>
       </div>
     </div>
+    <?php } ?>
  
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../admin/public/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 <script type="text/javascript" src="script.js"></script>
+
+<?php if ($user != "admin" ){ ?>
 <script type="text/javascript" src="https://static.jappix.com/php/get.php?l=en&amp;t=js&amp;g=mini.xml"></script>
 
 <script type="text/javascript">
    jQuery(document).ready(function() {
       MINI_ANIMATE = false;
       HOST_MAIN = "<?php echo $domain ?>";
-      HOST_BOSH_MINI = 'http://<?php echo $domain ?>:5280/http-bind/';
+      HOST_BOSH_MINI = 'http://apps.<?php echo $domain ?>:5280/http-bind/';
       launchMini(false, false, <?php echo '"'.$domain.'", '.'"'.$user.'", "'.$password.'"' ?>);
    });
 </script>
+<?php } ?>
+
 </body>
 </html>
 
