@@ -252,6 +252,7 @@ a.mail_image {
   outline-style: none;
   padding: 7px 6px 6px;
   color: #CCC;
+  text-decoration: none;
 }
 
 a.mail_image:hover {

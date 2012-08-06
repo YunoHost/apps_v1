@@ -1,0 +1,24 @@
+html {
+	margin: 0;
+	padding: 0;
+	background-color: #FAFAFA;
+}
+
+.yourapps {
+	position: absolute;
+	top: 5px;
+	left: 45%;
+}
+
+.profileandlogout {
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	margin-left: 300px;
+}
+
+.mailandim {
+	position: absolute;
+	bottom: 40px;
+	right: 55px;
+}

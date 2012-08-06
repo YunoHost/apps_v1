@@ -66,6 +66,13 @@ jQuery(document).ready(function () {
     jQuery(this).addClass('active');
   });
 
+  jQuery('a.mail_image').click(function(event) {
+    event.preventDefault();
+    parent.glu.location.href = jQuery(this).attr('href');
+    jQuery('li.tab a.active').removeClass('active');
+    jQuery('li.tab a[href="/roundcube"]').addClass('active');
+  });
+
   jQuery('li.tab a.active').click(function(event) {
     event.preventDefault();
   });

@@ -39,8 +39,8 @@ function scanAppDirectory($directory){
 $apps = scanAppDirectory('.');
 
 if ($user != "admin" ){
-$mailbox = imap_open('{127.0.0.1:143/novalidate-cert}INBOX', $user, $password);
-$mail = imap_mailboxmsginfo($mailbox);
+  $mailbox= imap_open('{127.0.0.1:143/novalidate-cert}INBOX', $user, $password);
+  $mail = imap_mailboxmsginfo($mailbox);
 }
 
  ?>
@@ -56,7 +56,7 @@ $mail = imap_mailboxmsginfo($mailbox);
   <link media="all" type="text/css" href="style.css" rel="stylesheet">
 </head>
 <body class="gradient" style="overflow: hidden">
-    <iframe name="glu" id="glu" width="100%" src="http://yunohost.org" style=""></iframe>
+    <iframe name="glu" id="glu" width="100%" src="welcome.php" style=""></iframe>
     <div class="navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -68,7 +68,7 @@ $mail = imap_mailboxmsginfo($mailbox);
           <div class="nav-collapse">
             <ul class="nav pull-right">
               <li class="tab">
-                <a class="active" href="http://yunohost.org">Home</a>
+                <a class="active" href="welcome.php">Home</a>
               </li>
               <?php foreach ($apps as $app) { ?>
                 <li class="tab">
@@ -83,7 +83,7 @@ $mail = imap_mailboxmsginfo($mailbox);
     <?php if ($user != "admin" ){ ?>
     <div class="mail_indicator">
       <div class="mail_container">
-        <a class="mail_image" title="New mails">
+        <a <?php if (array_key_exists('roundcube', array_flip($apps))) echo 'href="/roundcube"' ?> class="mail_image" title="New mails">
           <span class="mail_counter"><?php echo $mail->Unread ?></span>
         </a>
       </div>
