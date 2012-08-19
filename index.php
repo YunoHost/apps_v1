@@ -20,7 +20,16 @@
 
  $user = $_SERVER["PHP_AUTH_USER"];
  $password = $_SERVER["PHP_AUTH_PW"];
- // $domain = substr($_SERVER["HTTP_EMAIL"], strpos($_SERVER["HTTP_EMAIL"], '@') + 1);
+
+if ($user != "admin" ){
+  $mailbox= imap_open('{127.0.0.1:143/novalidate-cert}INBOX', $user, $password);
+  $mail = imap_mailboxmsginfo($mailbox);
+  if (isset($_GET['getMailCount'])) {
+    echo $mail->Unread;
+    die;
+  }  
+}
+
  $domain = exec('cat /usr/share/yunohost/yunohost-config/others/current_host');
 
 function scanAppDirectory($directory){
@@ -37,11 +46,6 @@ function scanAppDirectory($directory){
 }
 
 $apps = scanAppDirectory('.');
-
-if ($user != "admin" ){
-  $mailbox= imap_open('{127.0.0.1:143/novalidate-cert}INBOX', $user, $password);
-  $mail = imap_mailboxmsginfo($mailbox);
-}
 
  ?>
 <!doctype html>

@@ -86,13 +86,23 @@ jQuery(document).ready(function () {
   });
 
   var tid = setInterval(changeTitle, 10000);
+  var tid2 = setInterval(getMailCount, 30000);
+
   function changeTitle() {
     if (top.glu.document.title)
       top.document.title = top.glu.document.title;
     else
       top.document.title = 'Yunohost Apps';
   }
+
+  function getMailCount() {
+    $.get('/?getMailCount=1', function(data) {
+      $('.mail_counter').html(data);
+    });
+  }
+
   function abortTimer() {
     clearInterval(tid);
+    clearInterval(tid2);
   }
 });
