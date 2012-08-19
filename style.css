@@ -72,11 +72,10 @@ iframe {
 }
 .before, .after {
   float: right;
-  color: #333;
+  color: #FFF;
   line-height: 18px;
   padding: 6px 6px 8px;
   text-decoration: none;
-  background: #CCC;
   display: block;
   font-size: 18px;
   font-weight: bold;
