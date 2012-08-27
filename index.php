@@ -65,7 +65,7 @@ $apps = scanAppDirectory('.');
       <div class="navbar-inner">
         <div class="container">
           <a class="brand" href="/"><img src="logo.png"></a>
-          <div class="deco"><a href="http://auth.<?php echo $domain ?>/index.pl?logout=1" title="Log out"><img src="shutdown.png"></a></div>
+          <div class="deco"><a href="https://auth.<?php echo $domain ?>/index.pl?logout=1" title="Log out"><img src="shutdown.png"></a></div>
 
           <div class="username"><strong><a href="https://auth.<?php echo $domain ?>"><?php echo $user ?></a></strong></div>
           <a href="#" class="after">&rsaquo;</a>
